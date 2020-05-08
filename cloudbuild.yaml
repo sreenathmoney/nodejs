@@ -1,7 +1,3 @@
-steps:
-- name: 'gcr.io/cloud-builders/go'
-  args: ['build', 'my-package']
-artifacts:
-  objects:
-    location: 'gs://mybucket/'
-    paths: ['my-package']
+  steps:
+  - name: node
+    entrypoint: npm
