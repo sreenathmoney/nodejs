@@ -1,3 +1,7 @@
-  steps:
-  - name: node
-    entrypoint: npm
+steps:
+- name: node:$_NODE_VERSION
+  entrypoint: npm
+  args: ['install']
+- name: node:$_NODE_VERSION
+  entrypoint: npm
+  args: ['test']
