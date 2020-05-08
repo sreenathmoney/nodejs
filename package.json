@@ -1,0 +1,58 @@
+{
+  "name": "nodejs-sample",
+  "version": "0.0.1",
+  "description": "Starter Node.js sample project",
+  "main": "dst",
+  "directories": {
+    "test": "test/"
+  },
+  "scripts": {
+    "dev": "nodemon -w src --exec \"babel-node src\"",
+    "build": "babel src -s -D -d dst",
+    "start": "node dst",
+    "prestart": "npm run -s build",
+    "test": "mocha --exit --compilers js:babel-register",
+    "_test": "NODE_ENV=test mocha --exit --compilers js:babel-core/register --recursive $(find test -name '*.spec.js')",
+    "debug": "npm run -s build && node --nolazy --inspect-brk=9229 dst"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wellflat/nodejs-sample.git"
+  },
+  "author": "wellflat",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.265.1",
+    "body-parser": "^1.13.3",
+    "compression": "^1.5.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
+    "knex": "^0.13.0",
+    "morgan": "^1.8.0",
+    "multer": "^1.3.1",
+    "multer-s3": "^2.7.0",
+    "mysql2": "^1.5.1",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.9.2",
+    "power-assert": "^1.4.4",
+    "source-map-support": "^0.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/wellflat/nodejs-sample"
+  },
+  "keywords": [
+    "node"
+  ]
+}
