@@ -1,4 +1,7 @@
 steps:
-- name: node
-  entrypoint: npm
-  args: ['install']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['build', 'my-package']
+artifacts:
+  objects:
+    location: 'gs://testnjs/'
+    paths: ['path']
